@@ -1,0 +1,53 @@
+## Đưa 1 project từ local lên repo trên server github
+* Kiểm tra trạng thái 
+	git status => file có màu đỏ là chưa thêm & màu xanh là đã thêm
+* Add file vào repo
+	git add "tên file"
+* Commit các thay đổi
+	git commit -am "tên tùy chọn"
+* Đẩy file lên server
+	git push origin master
+
+## Tạo nhánh repo phụ mới
+	git branch "tên nhánh"
+* Chuyển sang nhanh vừa tạo
+	git checkout "tên nhánh"
+* Đẩy file lên repo vừa tạo
+	git add [tên folder dự án]
+	git commit -am "message tùy chọn"
+	git push origin "tên repo"
+
+## Xem toàn bộ nhánh repo
+	git remote show origin
+## Thêm file hay folder mới vào repo
+	git add [path file]
+## Commit các thay đổi và muốn đẩy lên server
+	git commit -am "tên thông điệp"
+## Trước khi đẩy code mới lên -> Lấy code trên server về(vì code trên server có thể team đã add thêm code mới)
+	git pull origin "tên nhánh repo" => lấy code mới về
+## Kỹ thuật merge code (Tránh va chạm code giữa nhiều ng)
+	Install "git extension"
+ 	Install Tortoise Merge SVN
+## Đẩy code lên server
+	git push origin "tên nhánh repo"
+
+## Xem những thay đổi trong project
+	git diff
+- Màu đỏ là dòng bị mất đi
+- Màu xanh là dòng được thêm mới
+* Tạo file diff để xem ngoài
+	git diff>> "tên file"
+## Xem lịch sử đẩy code
+	git log
+## Khôi phục file đã sửa về trạng thái ban đầu
+	git checkout [tên file] // có thể đường dẫn
+* Toàn bộ dự án
+	git check out --.
+
+## Add toàn bộ các file
+git add --all
+## Đẩy các file ở thư mục hiện tại
+git add .
+
+## Clone repo
+git clone git@github.com:boyka9x/repo_name

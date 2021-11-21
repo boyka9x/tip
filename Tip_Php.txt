@@ -1,0 +1,11 @@
+#########################
+# khởi chạy server đơn giản hơn với git
+1. git bash tại project
+2. Nhập lệnh
+	php spark serve
+3. Copy đường dẫn vào trình duyệt
+
+# Mở chế độ lập trình viên
+-> public/index.php
+paste: 
+	define('ENVIRONMENT', 'development');
