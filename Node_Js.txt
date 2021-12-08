@@ -1,0 +1,12 @@
+## Format code
+-Install libary: (npm i prettier lint-staged husky --save-dev)
+	Prettier
+	lint-staged
+	husky
+
+## Mô hình hóa đối tượng cho MongoDB
+- Install mongoose (github)
+
+## Method-override
+GET- POST => PUT PATCH...
+

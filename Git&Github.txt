@@ -49,5 +49,8 @@ git add --all
 ## Đẩy các file ở thư mục hiện tại
 git add .
 
+## Chuuyển sang thư mục vừa submit từ server về máy
+cd /d/Project
+
 ## Clone repo
 git clone git@github.com:boyka9x/repo_name

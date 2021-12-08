@@ -1,0 +1,171 @@
+1. React.createElement('h1', {color: red;}/null, 'Hello', n)
+## React-DOM -> rendering HTML DOM
+	ReactDOM.render(element, container)
+
+## React with JSX -> Javascript XML (Ko phải html)
+type= text/babel -> Babel
+	const li = <li>{js{variable}}</li>
+
+## <React.Fragment></React.Fragment> -> Container giả chứa các phần tử JSX
+
+## React element type: string, function/class
+- Wrapper
+	+ Header -> Header component
+	+ Content -> Content component
+	+ Footer -> Footer component
+
+function Header() {
+	return <div>Header</div>
+}
+
+const app = <Header></Header> or <Header />
+
+### Props -> Properties
+
+- React component
+	+ Sử dụng props giống như attribute của thẻ html
+	+ Phải tuân theo quy tắc có sẵn
+	+ 2 props class class, for => className, htmlFor
+- React component
+	+ Sử dụng props giống như đối số cho component (Tham số đầu vào hàm)
+	+ Tự do đặt tên props (Đặt theo camelCase)
+Note: 
+	+ Prop "key" là prop đặc biệt
+	+ Props cơ bản là đối số của component
+	=> Props có thể là bất cứ kiểu dữ liệu gì
+	+ Sử dụng destructuring
+
+## Boolean, Null, Undefined không được render
+	Kết hợp toán tử logic để render theo điều kiện
+	var first = true
+	{first && <h1>Hello</h1>}
+
+## Props trong JSX
+
+- <YourComponent
+	propName1="String literals"
+	propName2={expression}
+	/>
+- Props default to "true"
+- Children prop
+	<YourComponent>String literals</YourComponent>
+	<YourComponent>{expression}</YourComponent>
+
+<Button>Click me!</Button>
+
+function Button({children}) {} -> children -> Click me!
+
+## Render props
+
+## Create react-app
+# Cấu trúc thư mục
+react-webpack // Thư mục gốc
+	| src // Thư mục chứa source code chính
+		| component // Thư mục chứa components
+		| index.js // File khởi tạo, render app và #root
+	| public
+		| index.html // HTML page, nơi chứa root element
+
+# Khởi tạo dự án
+	npm init
+# Install webpack && webpack-cli
+	npm i webpack webpack-cli --save-dev
+# Install react && react-dom
+	npm i react react-dom --save
+# Install Babel
+	npm i @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
+
+- babel-core: Chuyển đổi ES6 về ES5
+- babel-loader: Cho phép chuyển các files JS sử dụng Babel & Webpack
+- babel-preset-env: Cho phép sử dụng JS trên nhiều môi trường - support đổi ES6-7-8 về ES5
+- babel-preset-react: Đổi JSX về JS
+
+## Cấu hình webpack
+# Install CSS-Loader và Style-Loader
+	npm i css-loader style-loader --save-dev
+ 	//
+	npm install --save-dev style-loader
+	npm install --save-dev css-loader
+-> Giúp webpack có thể tải file .css dưới dạng module
+
+# Tạo webpack.config.js tại thư mục gốc dự án (ngang hàng package.json)\\
+
+const path = require("path");
+
+module.exports = {
+  entry: "./src/index.js", // Dẫn tới file index.js ta đã tạo
+  output: {
+    path: path.join(__dirname, "/build"), // Thư mục chứa file được build ra
+    filename: "bundle.js" // Tên file được build ra
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/, // Sẽ sử dụng babel-loader cho những file .js
+        exclude: /node_modules/, // Loại trừ thư mục node_modules
+        use: ["babel-loader"]
+      },
+      {
+        test: /\.css$/, // Sử dụng style-loader, css-loader cho file .css
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  // Chứa các plugins sẽ cài đặt trong tương lai
+  plugins: [
+  ]
+};
+
+# Tạo file .babelrc
+-> Cấu hình cho thư viện babel tại thư mục gốc dự án
+
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
+}
+
+# Thêm scripts cho dự án
+Tại package.json
+
+"scripts": {
+    ...
+    "start": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+}
+
+# Chạy dự án
+	npm start
+
+# Thêm thẻ script link tới file build/bundle.js ở index.html (sau #root)
+	<script src="../build/bundle.js"></script> -> ES5
+
+# Install html-webpack-plugin 
+	Auto link file build/bundle.js vào index.html
+
+	npm i html-webpack-plugin --save-dev
+
+- Tại file webpack.config.js thêm
+...
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  ...
+  // Chứa các plugins sẽ cài đặt trong tương lai
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html"
+    })
+  ]
+};
+
+# Install webpack-dev-server (Không phải dùng Live-Server nữa yehhh)
+	npm i webpack-dev-server --save-dev
+
+# Cấu hình scripts trong package.json
+"scripts": {
+    ...
+    "start": "webpack-dev-server --mode development --open --hot",
+    ...
+}
