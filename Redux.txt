@@ -1,0 +1,27 @@
+1. Redux
+- Thư viện Js dùng để quản lý và cập nhật state của ứng dụng
+- 1 Pattern
+
+## 
+- Quản lý global state
+	+ Các components tại mọi nơi trong ứng dụng có thể truy xuất và cập nhật
+	+ Giải quyết vấn đề của React khi muốn truyền dữ liệu vào các cấp con cháu
+- Dễ dàng debug
+-Xử lý caching dữ liệu từ Server
+
+## Redux Toolkit
+- Sinh ra để giải quyết các vấn đề đối với Redux Core
+	+ Việc cấu hình Redux phức tạp
+	+ Phải cài đặt thủ công nhiều package
+	+ Redux yêu cầu rất nhiều boilerplate code
+
+## Sử dụng Redux khi nào???
+- Dự án có số lượng lớn state và các state được sử dụng ở nhiều nơi
+- State được cập nhật thường xuyên
+- Logic code cập nhật state phức tạp
+- Dự án có nhiều ng làm
+- Cần debug và muốn xem cách các state được cập nhật ở bất kỳ khoảng thời gian nào
+
+## Kiến trúc
+1. State management
+2. Immutability - Bất biến
