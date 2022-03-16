@@ -1,0 +1,42 @@
+########
+Ctrl + P	-	Chuyển đến file nào đó
+Ctrl + L	-	Chọn dòng hiện tại
+Ctrl + G	-	Chuyển đến dòng nào đó nhanh
+Ctrl + F/H		Tìm kiếm/Thay thế
+Ctrl + B	-	Ẩn/hiện sidebar
+Ctrl + W	-	Đóng file
+Ctrl + ]	-	Lùi đầu dòng ~~~~~~ Tab
+Ctrl + [	-	Ngược lại 	~   Shift + Tab
+Ctrl + Home	-	Di chuyển đến đầu file ngược lại vs End
+Home		-	Chuyển con trỏ đến đầu dòng         End
+
+
+Ctrl + .	-	Khắc phục lỗi nhanh
+Ctrl + `	-	Ẩn/hiện terminal
+Ctrl + \	-	Chia nhóm màn hình
+Ctrl + =/-	-	Zoom in/out
+Ctr + 1/2/3...	-	Di chuyển đến nhóm 1/2/3
+
+Ctrl + K,S		Lưu tất cả file
+
+##
+Alt + ↑		-	Di chuyển dòng hiện tại lên
+
+########
+Ctrl + Shift + K 	-	Xóa dòng hiện tại
+Ctrl + Shift + M	-	Tắt/hiện bảng vấn đề
+Ctrl + Shift + T	-	Mở lại file vừa đóng
+Ctrl + Shift + Z	-	Ngược lại Ctrl + Z ~~~~~~ Ctrl + Y
+Ctrl + Shift + Enter	-	Thêm dòng trống phía trên dòng hiện tại
+Ctrl + Shift + →	-	Bôi đen 1 từ
+
+########
+Shift + Alt + ↑		-	Copy dòng hiện tại và paste lên trên 1 dòng
+Ctrl + Alt + ↑		-	Thêm 1 con trỏ lên dòng bên trên 
+				(type đồng thời nhiều dòng)
+########
+Ctrl + Shift + P hoặc F1	-	Hiển thị list commands
+
+########
+F8 / Shift + F8		-	Di chuyển đến chỗ Error/Warning kế tiếp
+
